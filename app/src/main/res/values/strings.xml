@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GoFit!</string>
+    <string name="calculator">BMI Calculator</string>
+    <string name="setting">Setting</string>
+    <string name="daily">An apple a day keep doctor away</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="result">Result</string>
+    <string name="calculate">Calculate</string>
 </resources>
