@@ -10,16 +10,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.nikylos.gofit.CalculatorActivity">
 
+    <RadioGroup android:id="@+id/toggleGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        >
+
+        <ToggleButton android:id="@+id/toggleButtonMetric"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textOn="cm/kg"
+            android:textOff="cm/kg"
+            android:onClick="onToggle"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:checked="true" />
+        <ToggleButton android:id="@+id/toggleButtonStandard"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textOn="ft/lb"
+            android:textOff="ft/lb"
+            android:onClick="onToggle"
+            android:textColor="?android:attr/textColorPrimaryInverse" />
+    </RadioGroup>
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:id="@+id/editTextWeight"
-        android:hint="@string/weight"/>
+        android:hint="@string/weight"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toggleGroup" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,15 +60,15 @@
         android:layout_alignStart="@+id/editTextWeight"
         android:layout_marginTop="43dp"
         android:id="@+id/editTextHeight"
-        android:hint="@string/height"/>
+        android:hint="@string/height"
+        android:textAlignment="center"/>
 
     <TextView
         android:text="@string/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewResult"
-        android:layout_marginTop="87dp"
-        android:layout_below="@+id/editTextHeight"
+        android:layout_below="@+id/button"
         android:layout_alignLeft="@+id/editTextHeight"
         android:layout_alignStart="@+id/editTextHeight" />
 
@@ -48,8 +77,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_below="@+id/editTextHeight"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
+        android:layout_alignParentBottom="false" />
+
+
 </RelativeLayout>

@@ -2,9 +2,19 @@
     <string name="app_name">GoFit!</string>
     <string name="calculator">BMI Calculator</string>
     <string name="setting">Setting</string>
-    <string name="daily">An apple a day keep doctor away</string>
+    <string name="daily">\"An apple a day keep doctor away\"</string>
     <string name="weight">Weight</string>
     <string name="height">Height</string>
     <string name="result">Result</string>
     <string name="calculate">Calculate</string>
+    <string-array name="quote">
+        <item>An apple a day keeps the doctor away, But if the doctor is cute forget the fruit.</item>
+        <item>Eight glass of water a day, can make your symptoms go away.</item>
+        <item>Anorexia is a disease not a fashion statement.</item>
+        <item>Early to bed, early to rise, keeps a man healthy, wealthy and wise.</item>
+        <item>Success begins with hard work. Happiness begins with good health.</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
