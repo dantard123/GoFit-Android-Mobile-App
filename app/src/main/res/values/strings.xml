@@ -3,8 +3,8 @@
     <string name="calculator">BMI Calculator</string>
     <string name="setting">Setting</string>
     <string name="daily">\"An apple a day keep doctor away\"</string>
-    <string name="weight">Weight</string>
-    <string name="height">Height</string>
+    <string name="weight">Weight(kg)</string>
+    <string name="height">Height(cm)</string>
     <string name="result">Result</string>
     <string name="calculate">Calculate</string>
     <string-array name="quote">
@@ -15,6 +15,7 @@
         <item>Success begins with hard work. Happiness begins with good health.</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="feet">Feet</string>
+    <string name="inches">Inches</string>
+    <string name="pounds">Pounds</string>
 </resources>

@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.StandardFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextFeet"
+            android:hint="@string/feet"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextInches"
+            android:layout_toRightOf="@+id/editTextFeet"
+            android:hint="@string/inches"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextPound"
+            android:layout_below="@+id/editTextFeet"
+            android:hint="@string/pounds"
+            android:textAlignment="center"
+            />
+    </RelativeLayout>
+</FrameLayout>
