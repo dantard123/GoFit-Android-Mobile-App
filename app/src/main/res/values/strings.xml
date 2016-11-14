@@ -18,4 +18,8 @@
     <string name="feet">Feet</string>
     <string name="inches">Inches</string>
     <string name="pounds">Pounds</string>
+    <string name="record">Record</string>
+    <string name="reminder">Reminder</string>
+
+
 </resources>

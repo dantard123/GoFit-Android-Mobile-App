@@ -4,6 +4,7 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,6 +25,8 @@ import android.widget.ToggleButton;
 
 import org.w3c.dom.Text;
 
+import java.util.Random;
+
 import layout.*;
 
 public class CalculatorActivity extends AppCompatActivity implements MetricFragment.OnFragmentInteractionListener, StandardFragment.OnFragmentInteractionListener {
@@ -39,15 +42,21 @@ public class CalculatorActivity extends AppCompatActivity implements MetricFragm
     ToggleButton toggleButtonMetric;
     LayoutInflater layoutInflater;
     PopupWindow popupWindow;
+    double result;
+    int width;
+    int height;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      ;
+
 
 
         setContentView(R.layout.activity_calculator);
-
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        final int width = (int) (displayMetrics.widthPixels*0.8);
+        final int height = (int) (displayMetrics.heightPixels*0.7);
         //Toogle Listener
         ((RadioGroup) findViewById(R.id.toggleGroup)).setOnCheckedChangeListener(ToggleListener);
 
@@ -67,35 +76,32 @@ public class CalculatorActivity extends AppCompatActivity implements MetricFragm
             @Override
             public void onClick(View v) {
                 try {
+                    layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                    ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.layout_popup,null);
+                    popupWindow = new PopupWindow(container,width,height,true);
+                    RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.activity_calculator) ;
+                    popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
+
+                    // this will call the textview component in the  popup layout
+                    TextView textViewPopUp = (TextView) container.findViewById(R.id.textViewPopUp);
+
+
+
                 if( toggleButtonMetric.isChecked()){
 
                         editTextHeight = (EditText) findViewById(R.id.editTextHeight);
                         editTextWeight = (EditText) findViewById(R.id.editTextWeight);
                         double height = Double.parseDouble(editTextHeight.getText().toString());
                         double weight = Double.parseDouble(editTextWeight.getText().toString());
-                        double result = weight / Math.pow((height / 100), 2);
+                         result = weight / Math.pow((height / 100), 2);
                         textViewResult = (TextView) findViewById(R.id.textViewResult);
                         textViewResult.setText("Your BMI Value is" + String.format("%.2f", result) + "!");
 
 
-                   //popup
-                    layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-                    ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.layout_popup,null);
-                    popupWindow = new PopupWindow(container,400,400,true);
-                    RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.activity_calculator) ;
-                    popupWindow.showAtLocation(relativeLayout, Gravity.NO_GRAVITY,500,500);
-                    TextView textViewPopUp = (TextView) container.findViewById(R.id.textViewPopUp);
-                    textViewPopUp.setText("HIIIIIIIIII");
-                    container.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
-                            popupWindow.dismiss();
-                            return false;
-                        }
-                    });
+
 
                 }
-                else{
+                else if(toggleButtonMetric.isChecked()==false){
                         editTextHeight = (EditText) findViewById(R.id.editTextFeet);
                         editTextInches = (EditText) findViewById(R.id.editTextInches);
                         editTextWeight = (EditText) findViewById(R.id.editTextPound);
@@ -104,11 +110,21 @@ public class CalculatorActivity extends AppCompatActivity implements MetricFragm
                         double FINAL_HEIGHT = (height + inches)*0.025;
                         double weight = Double.parseDouble(editTextWeight.getText().toString()) * 0.45;
 
-                        double result = weight / Math.pow((FINAL_HEIGHT), 2);
+                         result = weight / Math.pow((FINAL_HEIGHT), 2);
                         textViewResult = (TextView) findViewById(R.id.textViewResult);
                         textViewResult.setText("Your BMI Value is" + String.format("%.2f", result) + "!");
 
                      }
+                    //popup
+                    textViewPopUp.setText(" "+String.format("%.2f", result)+" ");
+                    container.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            popupWindow.dismiss();
+                            return false;
+                        }
+                    });
+
                 } catch (Throwable ex) {
                     messageBox("Error", ex.getMessage());
                 }

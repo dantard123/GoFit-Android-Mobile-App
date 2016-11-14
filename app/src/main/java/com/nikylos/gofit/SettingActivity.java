@@ -15,15 +15,6 @@ public class SettingActivity extends AppCompatActivity implements MetricFragment
         super.onCreate(savedInstanceState);
 
 
-
-
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        MetricFragment fragment = new MetricFragment();
-        fragmentTransaction.add(R.id.fragment_container,fragment);
-        fragmentTransaction.commit();
-
-
         setContentView(R.layout.activity_setting);
 
     }
