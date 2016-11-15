@@ -57,11 +57,11 @@
             android:layout_marginRight="4dp" />
 
         <TextView
-            android:text="@string/reminder"
+            android:text="@string/heartbeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
-            android:onClick="goCalculator"
+            android:onClick="goHeartbeat"
             android:id="@+id/textViewRemainder"
             android:background="@color/colorMenu"
             android:ems="10"
@@ -75,7 +75,7 @@
             android:layout_marginRight="4dp" />
 
         <TextView
-            android:text="@string/record"
+            android:text="@string/profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"

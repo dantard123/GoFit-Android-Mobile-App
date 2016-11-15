@@ -20,6 +20,8 @@
     <string name="pounds">Pounds</string>
     <string name="record">Record</string>
     <string name="reminder">Reminder</string>
+    <string name="heartbeat">Heartbeat</string>
+    <string name="profile">Profile</string>
 
 
 </resources>

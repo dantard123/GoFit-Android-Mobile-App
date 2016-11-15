@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void goHeartbeat(View v){
+        Intent intent = new Intent(getApplicationContext(),HeartBeatActivity.class);
+        startActivity(intent);
+
+    }
+
 
     long lastPress;
     Toast backpressToast;
