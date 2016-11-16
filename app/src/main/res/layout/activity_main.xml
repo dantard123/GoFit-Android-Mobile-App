@@ -11,7 +11,7 @@
     android:weightSum="1"
     tools:context="com.nikylos.gofit.MainActivity"
     android:visibility="visible"
-    android:background="@drawable/background">
+    android:background="@mipmap/asset_background">
 
 
     <TextView
