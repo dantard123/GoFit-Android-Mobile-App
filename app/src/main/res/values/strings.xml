@@ -23,5 +23,7 @@
     <string name="heartbeat">Heartbeat</string>
     <string name="profile">Profile</string>
 
+    <string name="footstep">Footstep</string>
+
 
 </resources>

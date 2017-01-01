@@ -3,13 +3,14 @@ package com.nikylos.gofit;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FootstepActivity extends AppCompatActivity {
+public class FootstepActivity extends AppCompatActivity implements SensorEventListener{
     SensorManager sensorManager;
     TextView tv_steps;
     boolean running = false;

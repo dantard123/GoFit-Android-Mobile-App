@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void goFootstep(View v){
+        Intent intent = new Intent(getApplicationContext(), FootstepActivity.class);
+        startActivity(intent);
+    }
+
 
     long lastPress;
     Toast backpressToast;
