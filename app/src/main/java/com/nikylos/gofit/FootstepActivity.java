@@ -18,7 +18,7 @@ public class FootstepActivity extends AppCompatActivity implements SensorEventLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_footstep);
 
         tv_steps = (TextView)findViewById(R.id.tv_steps);
 
